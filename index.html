@@ -1,393 +1,296 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Khatri Namkeen | बिशाला की सुप्रसिद्ध नमकीन</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #fff8ed;
-      color: #3b1d0b;
-    }
-
-    header {
-      background: linear-gradient(135deg, #8b1e08, #d44708);
-      color: white;
-      padding: 25px 15px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 34px;
-      margin-bottom: 7px;
-    }
-
-    header p {
-      font-size: 17px;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 25px 15px;
-      background: #ffe6bd;
-    }
-
-    .hero h2 {
-      font-size: 27px;
-      margin-bottom: 8px;
-    }
-
-    .hero p {
-      font-size: 16px;
-    }
-
-    .products {
-      max-width: 1100px;
-      margin: auto;
-      padding: 25px 15px 120px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 16px;
-    }
-
-    .product {
-      background: white;
-      border-radius: 15px;
-      padding: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.10);
-      text-align: center;
-    }
-
-    .product-img {
-      height: 120px;
-      border-radius: 12px;
-      background: #ffe1a8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 45px;
-      margin-bottom: 12px;
-    }
-
-    .product h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    select {
-      width: 100%;
-      padding: 9px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 19px;
-      font-weight: bold;
-      color: #c42d08;
-      margin-bottom: 10px;
-    }
-
-    button {
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      padding: 10px 14px;
-      font-weight: bold;
-    }
-
-    .add-btn {
-      background: #d44708;
-      color: white;
-      width: 100%;
-    }
-
-    .cart {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      box-shadow: 0 -3px 15px rgba(0,0,0,0.15);
-      padding: 12px 15px;
-      z-index: 10;
-    }
-
-    .cart-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .cart-info {
-      font-weight: bold;
-    }
-
-    .order-btn {
-      background: #168b36;
-      color: white;
-      padding: 12px 18px;
-    }
-
-    .cart-items {
-      max-width: 1100px;
-      margin: 0 auto 20px;
-      padding: 0 15px;
-    }
-
-    .cart-item {
-      background: white;
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 8px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 15px 100px;
-      background: #3b1d0b;
-      color: white;
-    }
-
-    @media (max-width: 500px) {
-      header h1 {
-        font-size: 28px;
-      }
-
-      .hero h2 {
-        font-size: 23px;
-      }
-
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-
-      .product {
-        padding: 10px;
-      }
-
-      .product-img {
-        height: 90px;
-        font-size: 35px;
-      }
-
-      .product h3 {
-        font-size: 15px;
-      }
-
-      .cart-inner {
-        flex-direction: row;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khatri Namkeen - Bishala ki Suprasiddh Namkeen</title>
+    <!-- Tailwind CSS for Modern Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
 </head>
+<body class="bg-amber-50 text-gray-800">
 
-<body>
+    <!-- Header / Navbar -->
+    <header class="bg-amber-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold tracking-wide">Khatri Namkeen</h1>
+                <p class="text-xs text-amber-200">Bishala ki Suprasiddh Namkeen</p>
+            </div>
+            <button onclick="toggleCartModal()" class="relative bg-amber-800 hover:bg-amber-700 px-4 py-2 rounded-full flex items-center gap-2 transition">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold">0</span>
+            </button>
+        </div>
+    </header>
 
-<header>
-  <h1>🌶️ Khatri Namkeen</h1>
-  <p>बिशाला की सुप्रसिद्ध नमकीन</p>
-</header>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-amber-800 to-amber-950 text-white py-16 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-amber-700 text-amber-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Swad Jo Dil Jeet Le</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mt-4 mb-3">Khatri Namkeen</h2>
+            <p class="text-lg text-amber-200 italic mb-6">"Bishala ki Suprasiddh Namkeen"</p>
+            <p class="text-sm text-gray-300 mb-6"><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> Pitambar Khatri Bus Stand, Bishala</p>
+            <a href="#products" class="bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold px-8 py-3 rounded-full shadow-lg transition duration-300 inline-block">Order Now</a>
+        </div>
+    </section>
 
-<section class="hero">
-  <h2>स्वाद ऐसा, बार-बार खाने का मन करे 😋</h2>
-  <p>घर जैसा स्वाद • ताज़ी नमकीन • शानदार क्वालिटी</p>
-</section>
+    <!-- Products Section -->
+    <main id="products" class="max-w-7xl mx-auto px-4 py-12">
+        <h3 class="text-3xl font-bold text-center text-amber-950 mb-2">Hamare Lokpriya Namkeen</h3>
+        <p class="text-center text-gray-600 mb-10">Apni pasand ka weight chunein aur cart mein add karein</p>
 
-<section class="products" id="products"></section>
+        <!-- Product Grid (12 Products) -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- JavaScript will inject 12 products here -->
+        </div>
+    </main>
 
-<div class="cart-items" id="cartItems"></div>
-
-<div class="cart">
-  <div class="cart-inner">
-    <div class="cart-info">
-      🛒 Cart: <span id="cartCount">0</span> |
-      ₹<span id="cartTotal">0</span>
+    <!-- Floating Cart Bar for Mobile & Desktop Quick View -->
+    <div id="floating-cart" class="fixed bottom-0 left-0 right-0 bg-amber-950 text-white p-4 shadow-2xl flex justify-between items-center px-6 md:px-12 transform translate-y-full transition-transform duration-300 z-40">
+        <div>
+            <p class="text-xs text-amber-300">Total Items: <span id="ft-count">0</span></p>
+            <p class="text-lg font-bold">Total: ₹<span id="ft-total">0</span></p>
+        </div>
+        <button onclick="toggleCartModal()" class="bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold px-6 py-2 rounded-full shadow transition">
+            View Cart & Checkout
+        </button>
     </div>
 
-    <button class="order-btn" onclick="orderWhatsApp()">
-      WhatsApp पर Order करें
-    </button>
-  </div>
-</div>
+    <!-- Cart Modal / Checkout Drawer -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full flex flex-col p-6 shadow-2xl overflow-y-auto">
+            <div class="flex justify-between items-center border-b pb-4 mb-4">
+                <h3 class="text-xl font-bold text-amber-950">Aapka Cart</h3>
+                <button onclick="toggleCartModal()" class="text-gray-500 hover:text-black text-xl font-bold">&times;</button>
+            </div>
 
-<footer>
-  <h3>Khatri Namkeen</h3>
-  <p>बिशाला की सुप्रसिद्ध नमकीन</p>
-  <br>
-  <p>स्वाद और गुणवत्ता का भरोसा ❤️</p>
-</footer>
+            <!-- Cart Items List -->
+            <div id="cart-items" class="flex-grow space-y-4 overflow-y-auto mb-4">
+                <p class="text-gray-500 text-center py-8">Aapka cart khali hai.</p>
+            </div>
 
-<script>
+            <!-- Customer Details Form -->
+            <div class="border-t pt-4 space-y-3">
+                <h4 class="font-semibold text-sm text-gray-700">Delivery Details</h4>
+                <input type="text" id="cust-name" placeholder="Aapka Naam" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-amber-600">
+                <input type="tel" id="cust-phone" placeholder="Mobile Number" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-amber-600">
+                <textarea id="cust-address" placeholder="Poora Pata (Address) & Location" rows="2" class="w-full border rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-amber-600"></textarea>
+            </div>
 
-const products = [
-  "Khokha Sev",
-  "Patli Sev",
-  "Hing Sev",
-  "Lehsun Ganthiya",
-  "Ajwain Ganthiya (Fika Ganthiya)",
-  "Besan Papdi",
-  "Makki Papdi",
-  "Masoor Dal",
-  "Chana Dal",
-  "Mungfali",
-  "Chana",
-  "Aalo Ki Papdi"
-];
+            <!-- Total and Checkout Button -->
+            <div class="border-t pt-4 mt-4">
+                <div class="flex justify-between font-bold text-lg mb-4">
+                    <span>Grand Total:</span>
+                    <span>₹<span id="modal-total">0</span></span>
+                </div>
+                <button onclick="sendToWhatsApp()" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-lg transition">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Par Order Bhejein
+                </button>
+            </div>
+        </div>
+    </div>
 
-const prices = {
-  "200g": 59,
-  "400g": 119,
-  "1kg": 289
-};
+    <!-- Footer -->
+    <footer class="bg-amber-950 text-amber-200 text-center py-6 mt-12 text-sm">
+        <p class="font-semibold">Khatri Namkeen, Bishala</p>
+        <p class="text-xs text-gray-400 mt-1">Location: Pitambar Khatri Bus Stand, Bishala | Contact: 9649581068</p>
+        <p class="text-xs text-gray-500 mt-4">&copy; 2026 Khatri Namkeen. All rights reserved.</p>
+    </footer>
 
-let cart = [];
+    <!-- JavaScript for Functionality -->
+    <script>
+        // 12 Products Data mapped with your uploaded images (image_0.png to image_11.png)
+        const products = [
+            { id: 1, name: "Namkeen Item 1", img: "image_0.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 2, name: "Namkeen Item 2", img: "image_1.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 3, name: "Namkeen Item 3", img: "image_2.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 4, name: "Namkeen Item 4", img: "image_3.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 5, name: "Namkeen Item 5", img: "image_4.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 6, name: "Namkeen Item 6", img: "image_5.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 7, name: "Namkeen Item 7", img: "image_6.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 8, name: "Namkeen Item 8", img: "image_7.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 9, name: "Namkeen Item 9", img: "image_8.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 10, name: "Namkeen Item 10", img: "image_9.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 11, name: "Namkeen Item 11", img: "image_10.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 12, name: "Namkeen Item 12", img: "image_11.png", prices: { 200: 60, 400: 120, 1000: 300 } }
+        ];
 
-const productContainer = document.getElementById("products");
+        let cart = [];
 
-products.forEach((product, index) => {
+        // Render Products on UI
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col justify-between border border-amber-100 hover:shadow-xl transition duration-300">
+                    <div class="relative h-48 overflow-hidden bg-amber-50">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h4 class="font-bold text-lg text-amber-950 mb-2">${p.name}</h4>
+                        
+                        <!-- Weight Selector -->
+                        <label class="text-xs text-gray-500 mb-1">Weight Chunein:</label>
+                        <select id="weight-${p.id}" onchange="updatePriceDisplay(${p.id})" class="w-full border border-amber-200 rounded-lg p-1.5 text-sm mb-3 bg-amber-50 focus:outline-none focus:border-amber-600">
+                            <option value="200">200g - ₹60</option>
+                            <option value="400">400g - ₹120</option>
+                            <option value="1000">1kg - ₹300</option>
+                        </select>
 
-  const card = document.createElement("div");
-  card.className = "product";
+                        <!-- Dynamic Price & Quantity Selector -->
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-lg font-bold text-amber-900" id="price-display-${p.id}">₹60</span>
+                            <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+                                <button onclick="changeQty(${p.id}, -1)" class="px-2.5 py-1 bg-gray-100 hover:bg-gray-200 text-sm font-bold">-</button>
+                                <span id="qty-${p.id}" class="px-3 text-sm font-semibold">1</span>
+                                <button onclick="changeQty(${p.id}, 1)" class="px-2.5 py-1 bg-gray-100 hover:bg-gray-200 text-sm font-bold">+</button>
+                            </div>
+                        </div>
 
-  card.innerHTML = `
-    <div class="product-img">🥨</div>
+                        <!-- Add to Cart Button -->
+                        <button onclick="addToCart(${p.id})" class="mt-auto w-full bg-amber-900 hover:bg-amber-800 text-white font-medium py-2 rounded-xl text-sm shadow transition duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-    <h3>${product}</h3>
+        function updatePriceDisplay(id) {
+            const product = products.find(p => p.id === id);
+            const weight = document.getElementById(`weight-${id}`).value;
+            const price = product.prices[weight];
+            document.getElementById(`price-display-${id}`).innerText = `₹${price}`;
+        }
 
-    <select id="size-${index}" onchange="updatePrice(${index})">
-      <option value="200g">200g - ₹59</option>
-      <option value="400g">400g - ₹119</option>
-      <option value="1kg">1kg - ₹289</option>
-    </select>
+        function changeQty(id, val) {
+            const qtyElem = document.getElementById(`qty-${id}`);
+            let currentQty = parseInt(qtyElem.innerText) + val;
+            if (currentQty < 1) currentQty = 1;
+            qtyElem.innerText = currentQty;
+        }
 
-    <div class="price" id="price-${index}">₹59</div>
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const weight = document.getElementById(`weight-${id}`).value;
+            const weightLabel = weight == 1000 ? "1kg" : `${weight}g`;
+            const price = product.prices[weight];
+            const qty = parseInt(document.getElementById(`qty-${id}`).innerText);
 
-    <button class="add-btn" onclick="addToCart(${index})">
-      Add to Cart
-    </button>
-  `;
+            const cartItemId = `${id}-${weight}`;
+            const existingIndex = cart.findIndex(item => item.cartItemId === cartItemId);
 
-  productContainer.appendChild(card);
-});
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += qty;
+            } else {
+                cart.push({
+                    cartItemId,
+                    name: product.name,
+                    weightLabel,
+                    price,
+                    qty
+                });
+            }
 
-function updatePrice(index) {
-  const size = document.getElementById(`size-${index}`).value;
-  document.getElementById(`price-${index}`).innerText =
-    "₹" + prices[size];
-}
+            updateCartUI();
+            
+            // Reset quantity to 1
+            document.getElementById(`qty-${id}`).innerText = 1;
+            
+            alert(`${product.name} (${weightLabel}) Cart mein add ho gaya hai!`);
+        }
 
-function addToCart(index) {
+        function updateCartUI() {
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-  const product = products[index];
-  const size = document.getElementById(`size-${index}`).value;
-  const price = prices[size];
+            document.getElementById('cart-count').innerText = totalItems;
+            document.getElementById('ft-count').innerText = totalItems;
+            document.getElementById('ft-total').innerText = totalPrice;
+            document.getElementById('modal-total').innerText = totalPrice;
 
-  cart.push({
-    product: product,
-    size: size,
-    price: price
-  });
+            const floatingCart = document.getElementById('floating-cart');
+            if (totalItems > 0) {
+                floatingCart.classList.remove('translate-y-full');
+            } else {
+                floatingCart.classList.add('translate-y-full');
+            }
 
-  updateCart();
-}
+            const cartItemsContainer = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `<p class="text-gray-500 text-center py-8">Aapka cart khali hai.</p>`;
+                return;
+            }
 
-function updateCart() {
+            cartItemsContainer.innerHTML = cart.map((item, index) => `
+                <div class="flex justify-between items-center border-b pb-3">
+                    <div>
+                        <h5 class="font-semibold text-sm text-amber-950">${item.name} (${item.weightLabel})</h5>
+                        <p class="text-xs text-gray-500">₹${item.price} × ${item.qty} = <span class="font-bold text-gray-800">₹${item.price * item.qty}</span></p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-semibold">${item.qty}</span>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-sm"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        }
 
-  let total = 0;
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
 
-  cart.forEach(item => {
-    total += item.price;
-  });
+        function toggleCartModal() {
+            const modal = document.getElementById('cart-modal');
+            modal.classList.toggle('hidden');
+        }
 
-  document.getElementById("cartCount").innerText = cart.length;
-  document.getElementById("cartTotal").innerText = total;
+        function sendToWhatsApp() {
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
 
-  const cartItems = document.getElementById("cartItems");
+            if (!name || !phone || !address) {
+                alert("Kripya apna Naam, Mobile Number aur Pata (Address) zaroor bharein!");
+                return;
+            }
 
-  if (cart.length === 0) {
-    cartItems.innerHTML = "";
-    return;
-  }
+            if (cart.length === 0) {
+                alert("Aapka cart khali hai!");
+                return;
+            }
 
-  cartItems.innerHTML = `
-    <h3 style="margin-bottom:10px;">आपका Order</h3>
-    ${cart.map((item, i) => `
-      <div class="cart-item">
-        <span>
-          ${item.product} - ${item.size}
-        </span>
+            let message = `*Naya Order - Khatri Namkeen*%0A`;
+            message += `-----------------------------------%0A`;
+            message += `*Naam:* ${name}%0A`;
+            message += `*Phone:* ${phone}%0A`;
+            message += `*Pata:* ${address}%0A`;
+            message += `-----------------------------------%0A`;
+            message += `*Order Details:*%0A`;
 
-        <strong>
-          ₹${item.price}
-          <button onclick="removeItem(${i})"
-          style="margin-left:8px;background:#eee;">
-            ❌
-          </button>
-        </strong>
-      </div>
-    `).join("")}
-  `;
-}
+            cart.forEach((item, index) => {
+                message += `${index + 1}. ${item.name} (${item.weightLabel}) x ${item.qty} = ₹${item.price * item.qty}%0A`;
+            });
 
-function removeItem(index) {
-  cart.splice(index, 1);
-  updateCart();
-}
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `-----------------------------------%0A`;
+            message += `*Grand Total: ₹${totalPrice}*%0A`;
+            message += `*Location:* Pitambar Khatri Bus Stand, Bishala`;
 
-function orderWhatsApp() {
+            const whatsappUrl = `https://wa.me/919649581068?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
 
-  if (cart.length === 0) {
-    alert("पहले कोई product cart में add करें।");
-    return;
-  }
-
-  let message = "Namaste Khatri Namkeen 🙏%0A%0A";
-  message += "Mujhe ye order karna hai:%0A%0A";
-
-  cart.forEach((item, index) => {
-    message += `${index + 1}. ${item.product} - ${item.size} - ₹${item.price}%0A`;
-  });
-
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
-
-  message += `%0ATotal: ₹${total}%0A%0A`;
-  message += "Name:%0A";
-  message += "Phone:%0A";
-  message += "Address:%0A";
-
-  /*
-    IMPORTANT:
-    नीचे अपना WhatsApp नंबर डालना है।
-    Example:
-    919928611068
-  */
-
-  const phoneNumber = "919649581068";
-
-  const url =
-    `https://wa.me/${phoneNumber}?text=${message}`;
-
-  window.open(url, "_blank");
-}
-
-</script>
-
+        // Initialize products on load
+        renderProducts();
+    </script>
 </body>
 </html>
