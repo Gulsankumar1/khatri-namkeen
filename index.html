@@ -107,20 +107,20 @@
 
     <!-- JavaScript for Functionality -->
     <script>
-        // 12 Products Data mapped with your uploaded images (image_0.png to image_11.png)
+        // 12 Products Data with your provided image links and item names
         const products = [
-            { id: 1, name: "Namkeen Item 1", img: "image_0.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 2, name: "Namkeen Item 2", img: "image_1.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 3, name: "Namkeen Item 3", img: "image_2.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 4, name: "Namkeen Item 4", img: "image_3.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 5, name: "Namkeen Item 5", img: "image_4.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 6, name: "Namkeen Item 6", img: "image_5.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 7, name: "Namkeen Item 7", img: "image_6.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 8, name: "Namkeen Item 8", img: "image_7.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 9, name: "Namkeen Item 9", img: "image_8.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 10, name: "Namkeen Item 10", img: "image_9.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 11, name: "Namkeen Item 11", img: "image_10.png", prices: { 200: 60, 400: 120, 1000: 300 } },
-            { id: 12, name: "Namkeen Item 12", img: "image_11.png", prices: { 200: 60, 400: 120, 1000: 300 } }
+            { id: 1, name: "Bikaneri Bhujia", img: "https://i.ibb.co/d4ypbGDy/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 2, name: "Ratlami Sev", img: "https://i.ibb.co/VpPfSfcK/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 3, name: "Lehsun Sev", img: "https://i.ibb.co/G3ndg6H6/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 4, name: "Moong Dal", img: "https://i.ibb.co/211GKcxC/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 5, name: "Navratan Mixture", img: "https://i.ibb.co/qFVG12RD/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 6, name: "Khatta Meetha", img: "https://i.ibb.co/pBqv7LnJ/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 7, name: "Masala Chana", img: "https://i.ibb.co/9HjBtvJN/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 8, name: "Punjabi Tadka", img: "https://i.ibb.co/KcRwDn1L/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 9, name: "Shahi Mixture", img: "https://i.ibb.co/nNSKFC8h/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 10, name: "Plain Sev", img: "https://i.ibb.co/qYCxXQXQ/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 11, name: "Aloo Bhujia", img: "https://i.ibb.co/svwxHW78/image.png", prices: { 200: 60, 400: 120, 1000: 300 } },
+            { id: 12, name: "Special Khatri Mix", img: "https://i.ibb.co/6cmMBcK9/image.png", prices: { 200: 60, 400: 120, 1000: 300 } }
         ];
 
         let cart = [];
