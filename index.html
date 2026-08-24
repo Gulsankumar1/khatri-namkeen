@@ -1,89 +1,393 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Khatri Namkeen - Traditional taste, fresh and crispy namkeen">
-<title>खत्री नमकीन | Traditional Taste</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Khatri Namkeen | बिशाला की सुप्रसिद्ध नमकीन</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #fff8ed;
+      color: #3b1d0b;
+    }
+
+    header {
+      background: linear-gradient(135deg, #8b1e08, #d44708);
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 34px;
+      margin-bottom: 7px;
+    }
+
+    header p {
+      font-size: 17px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 25px 15px;
+      background: #ffe6bd;
+    }
+
+    .hero h2 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 16px;
+    }
+
+    .products {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 15px 120px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 15px;
+      padding: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+      text-align: center;
+    }
+
+    .product-img {
+      height: 120px;
+      border-radius: 12px;
+      background: #ffe1a8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 9px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 19px;
+      font-weight: bold;
+      color: #c42d08;
+      margin-bottom: 10px;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-weight: bold;
+    }
+
+    .add-btn {
+      background: #d44708;
+      color: white;
+      width: 100%;
+    }
+
+    .cart {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 -3px 15px rgba(0,0,0,0.15);
+      padding: 12px 15px;
+      z-index: 10;
+    }
+
+    .cart-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cart-info {
+      font-weight: bold;
+    }
+
+    .order-btn {
+      background: #168b36;
+      color: white;
+      padding: 12px 18px;
+    }
+
+    .cart-items {
+      max-width: 1100px;
+      margin: 0 auto 20px;
+      padding: 0 15px;
+    }
+
+    .cart-item {
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px 100px;
+      background: #3b1d0b;
+      color: white;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      .hero h2 {
+        font-size: 23px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .product {
+        padding: 10px;
+      }
+
+      .product-img {
+        height: 90px;
+        font-size: 35px;
+      }
+
+      .product h3 {
+        font-size: 15px;
+      }
+
+      .cart-inner {
+        flex-direction: row;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="hero">
-<nav><div class="brand">खत्री नमकीन</div><a href="#products">Products</a></nav>
-<div class="hero-content">
-<span class="eyebrow">TRADITIONAL • FRESH • CRISPY</span>
-<h1>खत्री नमकीन</h1>
-<p>परंपरागत स्वाद, हर निवाले में भरोसा।</p>
-<a class="btn" href="#products">नमकीन देखें ↓</a>
-</div>
+
+<header>
+  <h1>🌶️ Khatri Namkeen</h1>
+  <p>बिशाला की सुप्रसिद्ध नमकीन</p>
 </header>
 
-<main>
-<section id="products" class="section">
-<div class="head"><span class="eyebrow">OUR COLLECTION</span><h2>हमारी नमकीन</h2><p>अपनी पसंद की नमकीन चुनें और सीधे ऑर्डर करें।</p></div>
-<div class="grid">
-<article class="card">
-<div class="photo"><img src='images/palti-sev.jpg' alt='Palti Sev'></div>
-<div class="body"><h3>Palti Sev</h3><p>करारी और स्वादिष्ट सेव</p><button onclick="order('Palti Sev')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><img src='images/khokha-sev.jpg' alt='Khokha Sev'></div>
-<div class="body"><h3>Khokha Sev</h3><p>खस्ता और स्वादिष्ट सेव</p><button onclick="order('Khokha Sev')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Hing Namkeen</h3><p>हींग के खास स्वाद के साथ</p><button onclick="order('Hing Namkeen')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Besan Papdi</h3><p>कुरकुरी और स्वादिष्ट</p><button onclick="order('Besan Papdi')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Chana</h3><p>करारे भुने चने</p><button onclick="order('Chana')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Mungfali</h3><p>करारी मूंगफली</p><button onclick="order('Mungfali')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Chana Dal</h3><p>कुरकुरी चना दाल</p><button onclick="order('Chana Dal')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Masur Dal</h3><p>खस्ता मसूर दाल</p><button onclick="order('Masur Dal')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Aalo Papdi</h3><p>हल्की और कुरकुरी</p><button onclick="order('Aalo Papdi')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Lehsun Ganthiya</h3><p>लहसुन के चटपटे स्वाद के साथ</p><button onclick="order('Lehsun Ganthiya')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Fika Ganthiya</h3><p>हल्का और पारंपरिक स्वाद</p><button onclick="order('Fika Ganthiya')">Order Now</button></div>
-</article>
-<article class="card">
-<div class="photo"><span>Product Photo</span></div>
-<div class="body"><h3>Bhavnagari Ganthiya</h3><p>मोटी और स्वादिष्ट गांठिया</p><button onclick="order('Bhavnagari Ganthiya')">Order Now</button></div>
-</article>
-</div></section>
-
-<section class="contact">
-<div><span class="eyebrow">ORDER DIRECTLY</span><h2>नमकीन चाहिए?</h2><p>नाम और पसंद की नमकीन बताकर सीधे संपर्क करें।</p></div>
-<a class="btn" href="tel:9928611068">📞 9928611068</a>
+<section class="hero">
+  <h2>स्वाद ऐसा, बार-बार खाने का मन करे 😋</h2>
+  <p>घर जैसा स्वाद • ताज़ी नमकीन • शानदार क्वालिटी</p>
 </section>
-</main>
 
-<footer><strong>खत्री नमकीन</strong><span>© 2026 • Traditional Taste Since 1968</span></footer>
+<section class="products" id="products"></section>
+
+<div class="cart-items" id="cartItems"></div>
+
+<div class="cart">
+  <div class="cart-inner">
+    <div class="cart-info">
+      🛒 Cart: <span id="cartCount">0</span> |
+      ₹<span id="cartTotal">0</span>
+    </div>
+
+    <button class="order-btn" onclick="orderWhatsApp()">
+      WhatsApp पर Order करें
+    </button>
+  </div>
+</div>
+
+<footer>
+  <h3>Khatri Namkeen</h3>
+  <p>बिशाला की सुप्रसिद्ध नमकीन</p>
+  <br>
+  <p>स्वाद और गुणवत्ता का भरोसा ❤️</p>
+</footer>
+
 <script>
-function order(product){
- const phone="919649581068";
- const msg=`नमस्ते, मुझे ${product} ऑर्डर करनी है।`;
- window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,"_blank");
+
+const products = [
+  "Khokha Sev",
+  "Patli Sev",
+  "Hing Sev",
+  "Lehsun Ganthiya",
+  "Ajwain Ganthiya (Fika Ganthiya)",
+  "Besan Papdi",
+  "Makki Papdi",
+  "Masoor Dal",
+  "Chana Dal",
+  "Mungfali",
+  "Chana",
+  "Aalo Ki Papdi"
+];
+
+const prices = {
+  "200g": 59,
+  "400g": 119,
+  "1kg": 289
+};
+
+let cart = [];
+
+const productContainer = document.getElementById("products");
+
+products.forEach((product, index) => {
+
+  const card = document.createElement("div");
+  card.className = "product";
+
+  card.innerHTML = `
+    <div class="product-img">🥨</div>
+
+    <h3>${product}</h3>
+
+    <select id="size-${index}" onchange="updatePrice(${index})">
+      <option value="200g">200g - ₹59</option>
+      <option value="400g">400g - ₹119</option>
+      <option value="1kg">1kg - ₹289</option>
+    </select>
+
+    <div class="price" id="price-${index}">₹59</div>
+
+    <button class="add-btn" onclick="addToCart(${index})">
+      Add to Cart
+    </button>
+  `;
+
+  productContainer.appendChild(card);
+});
+
+function updatePrice(index) {
+  const size = document.getElementById(`size-${index}`).value;
+  document.getElementById(`price-${index}`).innerText =
+    "₹" + prices[size];
 }
+
+function addToCart(index) {
+
+  const product = products[index];
+  const size = document.getElementById(`size-${index}`).value;
+  const price = prices[size];
+
+  cart.push({
+    product: product,
+    size: size,
+    price: price
+  });
+
+  updateCart();
+}
+
+function updateCart() {
+
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price;
+  });
+
+  document.getElementById("cartCount").innerText = cart.length;
+  document.getElementById("cartTotal").innerText = total;
+
+  const cartItems = document.getElementById("cartItems");
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = "";
+    return;
+  }
+
+  cartItems.innerHTML = `
+    <h3 style="margin-bottom:10px;">आपका Order</h3>
+    ${cart.map((item, i) => `
+      <div class="cart-item">
+        <span>
+          ${item.product} - ${item.size}
+        </span>
+
+        <strong>
+          ₹${item.price}
+          <button onclick="removeItem(${i})"
+          style="margin-left:8px;background:#eee;">
+            ❌
+          </button>
+        </strong>
+      </div>
+    `).join("")}
+  `;
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function orderWhatsApp() {
+
+  if (cart.length === 0) {
+    alert("पहले कोई product cart में add करें।");
+    return;
+  }
+
+  let message = "Namaste Khatri Namkeen 🙏%0A%0A";
+  message += "Mujhe ye order karna hai:%0A%0A";
+
+  cart.forEach((item, index) => {
+    message += `${index + 1}. ${item.product} - ${item.size} - ₹${item.price}%0A`;
+  });
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  message += `%0ATotal: ₹${total}%0A%0A`;
+  message += "Name:%0A";
+  message += "Phone:%0A";
+  message += "Address:%0A";
+
+  /*
+    IMPORTANT:
+    नीचे अपना WhatsApp नंबर डालना है।
+    Example:
+    919928611068
+  */
+
+  const phoneNumber = "919649581068";
+
+  const url =
+    `https://wa.me/${phoneNumber}?text=${message}`;
+
+  window.open(url, "_blank");
+}
+
 </script>
-</body></html>
+
+</body>
+</html>
