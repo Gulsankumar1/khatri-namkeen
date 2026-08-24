@@ -283,7 +283,7 @@
             const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             message += `-----------------------------------%0A`;
             message += `*Grand Total: ₹${totalPrice}*%0A`;
-            message += `*Location:* Pitambar Khatri Bus Stand, Bishala`;
+           
 
             const whatsappUrl = `https://wa.me/919649581068?text=${message}`;
             window.open(whatsappUrl, '_blank');
